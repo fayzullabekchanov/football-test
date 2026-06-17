@@ -1,0 +1,514 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #1a6b2f;
+  --green-light: #22883c;
+  --green-dark: #0f4a1f;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+  --gray-mid: #e0e0e0;
+  --gray-text: #666;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --text: #1a1a1a;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0f4f1;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--green);
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar a, .navbar-user {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar a:hover { color: white; }
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.15);
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.btn-logout:hover { background: rgba(255,255,255,0.25); }
+
+/* LAYOUT */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* AUTH PAGES */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  padding: 1rem;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-logo h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--green);
+  letter-spacing: 3px;
+}
+
+.auth-logo p {
+  color: var(--gray-text);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-text);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-mid);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-input:focus { border-color: var(--green); }
+
+.btn-primary {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary:hover { background: var(--green-light); }
+.btn-primary:disabled { background: #999; cursor: not-allowed; }
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--gray-text);
+}
+
+.auth-link a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.error-msg {
+  background: #fee2e2;
+  color: var(--danger);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  border: 1px solid #fca5a5;
+}
+
+/* HOME PAGE */
+.hero-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.hero-header {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  padding: 2rem;
+  color: white;
+}
+
+.hero-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.hero-header p {
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hero-body {
+  padding: 2rem;
+  line-height: 1.7;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.hero-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--gray-mid);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-start {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 0.9rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-start:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(26,107,47,0.4);
+}
+
+/* TEST PAGE */
+.test-header {
+  background: var(--green);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.test-header .user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.timer {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  background: rgba(0,0,0,0.2);
+  padding: 0.2rem 0.8rem;
+  border-radius: 6px;
+}
+
+.test-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.question-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+  background: #0ea5e9;
+  color: white;
+  padding: 1.25rem 1.5rem;
+}
+
+.question-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.question-number {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.question-body {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.question-img {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.question-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--gray-mid);
+}
+
+.answer-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.answer-btn {
+  padding: 0.65rem 1.5rem;
+  border: 2px solid var(--danger);
+  background: white;
+  color: var(--danger);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.answer-btn:hover, .answer-btn.selected {
+  background: var(--danger);
+  color: white;
+}
+
+.progress-bar-wrap {
+  background: var(--gray-mid);
+  height: 4px;
+  border-radius: 2px;
+  margin: 1.5rem 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 0.4s;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  margin-bottom: 0.5rem;
+}
+
+/* GROUP MARKERS for question groups */
+.group-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+  background: var(--gray);
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.group-label-wrap {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* TABLE */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  font-size: 0.88rem;
+}
+
+.result-table th {
+  background: var(--green);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.result-table td {
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-mid);
+  color: #333;
+}
+
+.result-table tr:last-child td { border-bottom: none; }
+.result-table tr:hover td { background: #f0f9f3; }
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: var(--green-dark);
+  letter-spacing: 2px;
+  margin-bottom: 1.25rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-text);
+}
+
+/* LOADING */
+.spinner {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner-ring {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--gray-mid);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* DONE screen */
+.done-screen {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.done-screen h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--green);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.done-screen p {
+  color: var(--gray-text);
+  margin-bottom: 1.5rem;
+}
+
+.score-badge {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .auth-card { padding: 2rem 1.25rem; }
+  .hero-body { padding: 1.25rem; }
+  .result-table { font-size: 0.78rem; }
+  .result-table th, .result-table td { padding: 0.5rem 0.5rem; }
+}
