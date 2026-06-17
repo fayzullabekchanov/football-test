@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
             ) : (
               <Link href="/login" className="btn-start">
-                KIRISH VA BOSHLASH
+                BOSHLASH
               </Link>
             )}
           </div>
