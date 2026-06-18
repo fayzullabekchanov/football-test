@@ -1,0 +1,40 @@
+// prisma/schema.prisma
+//npg_Bat03JrKYVqA
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env(postgresql://neondb_owner:npg_Bat03JrKYVqA@ep-twilight-forest-at8gsdf4-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require)
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  userName  String    @unique
+  password  String
+  fullName  String
+  role      String    @default("USER")
+  anstests  Anstest[]
+  createdAt DateTime  @default(now())
+
+  @@map("t_user")
+}
+
+model Anstest {
+  id           Int      @id @default(autoincrement())
+  bal1         String?
+  bal2         String?
+  bal3         String?
+  totalBall    String?
+  anstime1     Int      @default(0)
+  anstime2     Int      @default(0)
+  anstime3     Int      @default(0)
+  totalAnstime String?
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+
+  @@map("t_anstest")
+}
