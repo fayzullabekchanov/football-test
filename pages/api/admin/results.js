@@ -18,9 +18,10 @@ export default async function handler(req, res) {
     return res.status(200).json(results)
   }
 
+
   if (req.method === 'DELETE') {
-    const { userId } = req.body
-    await prisma.user.delete({ where: { id: parseInt(userId) } })
+    const { id } = req.body
+    await prisma.anstest.delete({ where: { id: parseInt(id) } })
     return res.status(200).json({ success: true })
   }
 
