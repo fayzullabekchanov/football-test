@@ -26,14 +26,14 @@ export default function AdminPage() {
 
   useEffect(() => { fetchResults() }, [])
 
-  const handleDelete = async (userId, name) => {
+  const handleDelete = async (id, name) => {
     if (!confirm(t.admin_confirm(name))) return
     await fetch('/api/admin/results', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId }),
+      body: JSON.stringify({ id }),
     })
-    setResults(prev => prev.filter(r => r.userId !== userId))
+    setResults(prev => prev.filter(r => r.id !== id))
   }
 
   if (status === 'loading' || loading) return (
@@ -80,10 +80,11 @@ export default function AdminPage() {
                     <td style={{ fontWeight: 700, color: '#1a6b2f' }}>{r.totalBall}</td>
                     <td>{r.totalAnstime}</td>
                     <td>
-                      <button onClick={() => handleDelete(r.userId, r.user?.fullName)}
-                        style={{ background: '#dc2626', color: 'white', border: 'none', padding: '0.3rem 0.7rem', borderRadius: 6, cursor: 'pointer', fontSize: '0.8rem' }}>
+                      <button onClick={() => handleDelete(r.id, r.user?.fullName)}
+                              style={{ background: '#dc2626', color: 'white', border: 'none', padding: '0.3rem 0.7rem', borderRadius: 6, cursor: 'pointer', fontSize: '0.8rem' }}>
                         {t.admin_delete}
                       </button>
+
                     </td>
                   </tr>
                 ))}
