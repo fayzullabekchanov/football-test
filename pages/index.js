@@ -12,7 +12,7 @@ export default function Home() {
       <div className="container">
         <div className="hero-card">
           <div className="hero-header">
-            <h2>⚽ FUTBOL TAKTIK TESTI</h2>
+            <h2>⚽</h2>
             <p>Futbol maydonidagi taktik fikrlash qobiliyatingizni baholash tizimi</p>
           </div>
           <div className="hero-body">
