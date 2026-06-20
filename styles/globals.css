@@ -545,6 +545,19 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
+/* Mobil — to'liq matn yashiriladi, faqat ikonka ko'rinadi */
+.brand-icon { display: none; }
+.nav-link-icon { display: none; }
+
+@media (max-width: 450px) {
+  .brand-full { display: none; }
+  .brand-icon { display: inline; font-size: 1.4rem; }
+  .nav-link-full { display: none; }
+  .nav-link-icon { display: inline; }
+  .navbar-user { display: none; }
+  .lang-btn { font-size: 0.7rem; padding: 0.25rem 0.4rem; }
+}
+
 @media (max-width: 600px) {
   .lang-btn { font-size: 0.7rem; padding: 0.25rem 0.45rem; }
   .navbar-user { display: none; }
