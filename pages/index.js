@@ -12,8 +12,8 @@ export default function Home() {
       <div className="container">
         <div className="hero-card">
           <div className="hero-header">
-            <h2>⚽</h2>
-            <p>Futbol maydonidagi taktik fikrlash qobiliyatingizni baholash tizimi</p>
+
+            <h2><b>Futbol maydonidagi taktik fikrlash qobiliyatingizni baholash tizimi</b></h2>
           </div>
           <div className="hero-body">
             <p>

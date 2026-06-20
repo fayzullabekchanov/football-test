@@ -211,6 +211,7 @@ body {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
   padding: 2rem;
   color: white;
+  text-align: center;
 }
 
 .hero-header h2 {
