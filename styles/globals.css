@@ -506,8 +506,48 @@ body {
   border-radius: 12px;
   margin: 1rem 0;
 }
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+.lang-btn {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.lang-btn.active {
+  background: white;
+  color: #1a6b2f;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
 
 @media (max-width: 600px) {
+  .lang-btn { font-size: 0.7rem; padding: 0.25rem 0.45rem; }
+  .navbar-user { display: none; }
   .auth-card { padding: 2rem 1.25rem; }
   .hero-body { padding: 1.25rem; }
   .result-table { font-size: 0.78rem; }
