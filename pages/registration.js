@@ -12,6 +12,9 @@ export default function Registration() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const [showPass, setShowPass] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -62,16 +65,42 @@ export default function Registration() {
             <input className="form-input" type="text" placeholder="username"
               value={form.userName} onChange={e => setForm({ ...form, userName: e.target.value })} required />
           </div>
+          {/*<div className="form-group">*/}
+          {/*  <label className="form-label">{t.reg_password}</label>*/}
+          {/*  <input className="form-input" type="password" placeholder="••••••"*/}
+          {/*    value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required />*/}
+          {/*</div>*/}
+          {/*<div className="form-group">*/}
+          {/*  <label className="form-label">{t.reg_confirm}</label>*/}
+          {/*  <input className="form-input" type="password" placeholder="••••••"*/}
+          {/*    value={form.passwordConfirm} onChange={e => setForm({ ...form, passwordConfirm: e.target.value })} required />*/}
+          {/*</div>*/}
+
+
           <div className="form-group">
             <label className="form-label">{t.reg_password}</label>
-            <input className="form-input" type="password" placeholder="••••••"
-              value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required />
+            <div className="input-wrap">
+              <input className="form-input" type={showPass ? 'text' : 'password'} placeholder="••••••"
+                     value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required />
+              <button type="button" className="eye-btn" onClick={() => setShowPass(!showPass)}>
+                {showPass ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
+
           <div className="form-group">
             <label className="form-label">{t.reg_confirm}</label>
-            <input className="form-input" type="password" placeholder="••••••"
-              value={form.passwordConfirm} onChange={e => setForm({ ...form, passwordConfirm: e.target.value })} required />
+            <div className="input-wrap">
+              <input className="form-input" type={showConfirm ? 'text' : 'password'} placeholder="••••••"
+                     value={form.passwordConfirm} onChange={e => setForm({ ...form, passwordConfirm: e.target.value })} required />
+              <button type="button" className="eye-btn" onClick={() => setShowConfirm(!showConfirm)}>
+                {showConfirm ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
+
+
+
           <button className="btn-primary" type="submit" disabled={loading}>
             {loading ? t.reg_loading : t.reg_btn}
           </button>

@@ -13,7 +13,7 @@ export default function Login() {
   const [form, setForm] = useState({ username: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const [showPass, setShowPass] = useState(false)
   useEffect(() => {
     if (session) router.push('/')
   }, [session])
@@ -77,14 +77,19 @@ export default function Login() {
           </div>
           <div className="form-group">
             <label className="form-label">{t.login_password}</label>
-            <input
-              className="form-input"
-              type="password"
-              placeholder="••••••"
-              value={form.password}
-              onChange={e => setForm({ ...form, password: e.target.value })}
-              required
-            />
+            <div className="input-wrap">
+              <input
+                  className="form-input"
+                  type={showPass ? 'text' : 'password'}
+                  placeholder="••••••"
+                  value={form.password}
+                  onChange={e => setForm({ ...form, password: e.target.value })}
+                  required
+              />
+              <button type="button" className="eye-btn" onClick={() => setShowPass(!showPass)}>
+                {showPass ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
           <button className="btn-primary" type="submit" disabled={loading}>
             {loading ? t.login_loading : t.login_btn}
