@@ -89,7 +89,8 @@ body {
 
 /* LAYOUT */
 .container {
-  max-width: 960px;
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
